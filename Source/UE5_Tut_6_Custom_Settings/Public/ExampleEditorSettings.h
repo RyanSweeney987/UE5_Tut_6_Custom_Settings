@@ -10,6 +10,7 @@
  * Everything is pretty much the same as Plugin settings, except the Config specifier is different.
  * Config = EditorPerProjectUserSettings saves the settings in the EditorPerProjectUserSettings.ini
  * and is under Editor Preferences instead of Project Settings.
+ * This text also gets included as the description in the settings window.
  */
 UCLASS(Config = EditorPerProjectUserSettings, DefaultConfig, meta = (DisplayName = "Example Editor Settings"), MinimalAPI)
 class UExampleEditorSettings : public UDeveloperSettings
@@ -27,4 +28,10 @@ public:
 	// Global static getters
 	static UE5_TUT_6_CUSTOM_SETTINGS_API UExampleEditorSettings* Get();
 	static UE5_TUT_6_CUSTOM_SETTINGS_API const UExampleEditorSettings* GetConst();
+	
+	UE5_TUT_6_CUSTOM_SETTINGS_API virtual FName GetCategoryName() const override
+	{
+		// The category under which the settings appear in the Project Settings window
+		return TEXT("Plugins");
+	};
 };

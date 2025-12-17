@@ -52,6 +52,7 @@ public:
 	UE5_TUT_6_CUSTOM_SETTINGS_API virtual FText GetSectionText() const override
 	{
 		// This is what you see on the left with all the settings to select and top of the settings
+		// Overrides DisplayName in UCLASS meta
 		return LOCTEXT("SectionText", "Example Section Text");
 	}
 
