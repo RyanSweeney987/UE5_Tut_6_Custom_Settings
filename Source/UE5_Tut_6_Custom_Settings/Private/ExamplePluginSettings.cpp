@@ -16,4 +16,7 @@ const UExamplePluginSettings* UExamplePluginSettings::GetConst()
 void UExamplePluginSettings::SetExampleFloat(const float InFloat)
 {
 	ExampleFloat = InFloat;
+	
+	// Update the config file after changing a value
+	this->TryUpdateDefaultConfigFile();
 }
