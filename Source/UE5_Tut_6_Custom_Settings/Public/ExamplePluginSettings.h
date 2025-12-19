@@ -48,6 +48,12 @@ public:
 		return TEXT("Plugins");
 	}
 	
+	// This can also set whether it's a project or editor setting
+	UE5_TUT_6_CUSTOM_SETTINGS_API virtual FName GetContainerName() const override
+	{
+		return TEXT("Project");
+	}
+	
 #if WITH_EDITOR
 	UE5_TUT_6_CUSTOM_SETTINGS_API virtual FText GetSectionText() const override
 	{
